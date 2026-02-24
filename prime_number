@@ -1,0 +1,48 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+
+
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+
+        String n = bufferedReader.readLine();
+        long num = Long.parseLong(n);
+        // BigInteger num = new BigInteger(n);
+        
+        boolean flag = true ;
+        
+        if(num <= 1)
+        {
+            flag = false;
+        }
+        else
+        {   
+            for(int i=2;i<Math.sqrt(num);i++)
+            {
+                if(num%i == 0)
+                {
+                    flag = false;
+                    break;
+                }
+            }    
+        }
+        
+        if(flag)
+        {
+            System.out.println("prime");
+        }
+        else
+        {
+            System.out.println("not prime");   
+        }
+        
+        bufferedReader.close();
+    }
+}
